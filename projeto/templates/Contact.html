@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static "css/estilo.css" %}">
+    <title>Contato</title>
+</head>
+<body>
+    <header class="header">
+        <h1 class="header-heading">
+            <a href="http://127.0.0.1:8000/" class="header-link">
+                Clique aqui para voltar a pagina principal
+            </a>
+        </h1>
+    </div>
+    <div>
+        {% block contact %}
+            <h1 class="titulo">{{contact.first_name}} {{contact.last_name}}</h1>
+            <p class="dados"><strong>ID: </strong>{{contact.id}}</p>
+            <p class="dados"><strong>E-mail: </strong>{{contact.email}}</p>
+            <p class="dados"><strong>Phone: </strong>{{contact.phone}}</p>
+            <p class="dados"><strong>Created date: </strong>{{contact.created_date}}</p>
+            <p class="dados"><strong>Category: </strong>{{contact.category}}</p>
+        {% endblock contact %}
+    </div>
+</body>
+</html>

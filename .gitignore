@@ -2,6 +2,13 @@
 __pycache__/
 *.py[cod]
 *$py.class
+dicas 
+picture 
+utils
+manage.py
+requirements.txt
+project/local_settings.py
+
 
 # C extensions
 *.so
