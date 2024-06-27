@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static "style.css" %}">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <h1>Dados das pessoas cadastradas</h1>
+        {% if user.is_authenticated %}
+            <p class="link"><a href="{% url "cadastro" %}">Criar contatos</a></p>
+            <p class="register"><a href="{% url "user_update" %}">Atualizar dados</a></p>
+            <p class="logouth"><a href="{% url "logouth" %}">Logouth</a></p>
+        {% else %}
+            <p class="link"><a href="{% url "register" %}">Registrar-se</a></p>
+            <p class="register"><a href="{% url "login" %}">Login</a></p>
+        {% endif %}
+    </header>
+
+    <!-- <div class="search"><br>
+        <form action="{% url "Search" %}" method="get">
+            <input 
+            type="text" 
+            class="search-input"
+            placeholder="Search"
+            id="search"
+            name="q"
+            value="{{request.GET.q.strip}}">
+        </form>
+    </div> 
+-->
+    {% if page_obj %}
+    <div class="pesquisar"> <br><br>
+        <table>
+            <caption>Usuários</caption>
+            <thead>
+                <tr>
+                    <th class="table-header">Id</th>
+                    <th class="table-header">Nome</th>
+                    <th class="table-header">Sobrenome</th>
+                    <th class="table-header">Telefone</th>
+                    <th class="table-header">E-mail</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for contact in contatos %}
+                <tr>
+                    <td><a href="{% url "contact" contact.id %}">{{contact.id}}</a></td>
+                    <td>{{contact.nome}}</td>
+                    <td>{{contact.sobrenome}}</td>
+                    <td>{{contact.telefone}}</td>
+                    <td>{{contact.email}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <br><br><br><br>
+    <!-- <div class="pagination">
+        <span class="step-links">
+            {% if page_obj.has_previous %}
+                <a href="?page=1">&laquo; first</a>
+                <a href="?page={{ page_obj.previous_page_number }}">previous</a>
+            {% endif %}
+
+            <span class="current">
+                Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+            </span>
+
+            {% if page_obj.has_next %}
+                <a href="?page={{ page_obj.next_page_number }}">next</a>
+                <a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
+            {% endif %}
+        </span> 
+    -->
+
+    {% else %}
+    <header>
+        <div>
+        <table>
+            <caption>Contacts</caption>
+            <thead>
+                <tr>
+                    <th>Não há nenhum contato cadastrado</th>
+                </tr>
+            </thead>
+            
+    {% endif %}
+</body>
+</html>

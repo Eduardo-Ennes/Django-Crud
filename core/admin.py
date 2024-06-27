@@ -1,8 +1,16 @@
 from django.contrib import admin
-from projeto import models
+from core import models
 
-@admin.register(models.contact)
-class ContactAdmin(admin.ModelAdmin):
+
+
+@admin.register(models.Contato)
+class contatoadmin(admin.ModelAdmin):
+    list_display = 'id', 'nome', 'sobrenome', 'telefone', 'email', 'own'
+    list_editable = 'nome', 'sobrenome', 'telefone', 'email',
+    
+    '''
+    Arquivo complementar para dicas!
+    
     list_display = 'id','first_name', 'last_name', 'created_date','show',
     # Cria as colunas que serão apresentadas no admin do django
     
@@ -26,9 +34,12 @@ class ContactAdmin(admin.ModelAdmin):
     
     # list_display_links = 'id', 'last_name', 
     # Cria um acesso direto ao dados do usuário direto pelo campo desejado 
+    '''
     
-    
-@admin.register(models.Category)
-class CategoryAdmin(admin.ModelAdmin):
+
+@admin.register(models.Profissao)
+class profissaoadmin(admin.ModelAdmin):
     list_display = 'profissao',
-    ordering = 'id', 
+    ordering = 'id',
+
+

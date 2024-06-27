@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+{% load bootstrap4 %}
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    {% bootstrap_css %}
+</head>
+<body>
+    <div class="container">
+      <h1><a href="{% url "Index" %}">Login</a></h1>
+      {% if user.is_authenticated %}
+        <p>Você fez login como {{user.username}}. Clique <a href="{% url "Index" %}">aqui</a> para sair</p>
+      {% else %}  
+      {% bootstrap_messages %}
+      <form action="{{form_action}}" method="post" class="form" autocomplete="off">
+          {% csrf_token %}
+          {% bootstrap_form form %}
+          <button type="submit" class="botao">Registrar</button>
+      </form>
+    </div>
+    {% bootstrap_javascript jquery='full' %}
+      {% endif %}   
+</body>

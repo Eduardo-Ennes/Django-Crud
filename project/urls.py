@@ -16,17 +16,21 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from projeto import views
+from core.views import *
 from django.conf.urls.static import static
 from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.index, name='index'),
-    path('<int:Contact_id>/detail/', views.Contact, name='Contact'),
-    # path('<int:Contact_id>/update/', views.update, name='update'), 
-    # Atualização de dados não deu certo
-    path('search/', views.search, name='search'),
-    path('create/', views.create, name='create'),
+    path('', Index, name='Index'),
+    path('cadastro/', Cadastro, name='cadastro'),
+    path('<int:contato_id>/detail/', Contato_individual, name='contact'),
+    path('<int:contato_id>/update/', Atualizar, name='atualizar'),
+    path('<int:contato_id>/delete/', Deletar, name='deletar'),
+    path('register/', register, name='register'),
+    path('user/login/', login_view, name='login'),
+    path('user/update/', user_update, name='user_update'),
+    path('logouth/', Logouth, name='logouth'),
+    path('search/', Search, name='Search'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) 
     # configuração para mostrar a link da imagem do usuário no banco de dados

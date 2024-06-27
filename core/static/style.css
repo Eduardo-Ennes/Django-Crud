@@ -1,0 +1,101 @@
+@charset "UTF-8";
+
+*{
+    padding: 0px;
+    margin: 0px;
+}
+
+body{
+    position: relative;
+    background-color: rgb(181, 181, 182);
+}
+
+header{
+    background-color: rgb(126, 126, 250);
+    height: 200px;
+    width: 100%;
+}
+
+h1{
+    text-align: center;
+    padding: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+p.link{
+    position: absolute;
+    top: 100px;
+    left: 40%;
+}
+
+p.register{
+    position: absolute;
+    left: 40%;
+}
+
+p.logouth{
+    position: absolute;
+    top: 140px;
+    left: 40%;
+}
+
+div.pesquisar{
+    position: relative;
+}
+
+form{
+    text-align: center;
+}
+
+a{
+    text-decoration: none;
+    padding: 10px;
+    font-size: larger;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(17, 1, 250);
+}
+
+table{
+    position: relative;
+    margin: auto;
+    width: 800px;
+    border-collapse: collapse;
+}
+
+input{
+    margin: auto;
+    width: 250px;
+    height: 20px;
+}
+
+caption{
+    border: 1px solid black;
+}
+
+th{
+    border: 1px solid black;
+}
+
+td{
+    border: 1px solid black;
+    text-align: center;
+}
+
+.cadastro_usuario{
+    background-color: rgb(126, 126, 250);
+}
+
+.titulo_usuario{
+    text-align: center;
+    padding: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#painel_cadastro{
+    text-align: center;
+}
+
+.step-links{
+    position: absolute;
+    left: 45%;
+}

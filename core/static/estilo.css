@@ -1,0 +1,47 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+
+body{
+    background-color: rgba(0, 0, 0, 0.534);
+}
+
+header{
+    background-color: rgb(126, 126, 250);
+    height: 100px;
+    width: 100%;
+}
+
+header > h1{
+    text-align: center;
+    padding: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+p.link{
+    position: absolute;
+    left: 45%;
+}
+
+div{
+    position: absolute;
+    background-color: white;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50% , -50%);
+    
+}
+
+h1.titulo{
+    text-align: center;
+}
+
+p.dados{
+    padding: 10px;
+    text-align: justify;
+}
+
+.update{
+    padding: 10px;
+}

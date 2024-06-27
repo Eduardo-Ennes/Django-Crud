@@ -20,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-gs(2r=_&cxgt66j)9u9e4__)0pza78%@4_g5wl+7l@a21&ys_='
+SECRET_KEY = 'django-insecure-q^+92hi5*9cfpv9^65-@w*lzal(p4i6yygi@4mg_gk_hd*t4!2'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -37,7 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'projeto',
+    'core',
+    'bootstrap4',
 ]
 
 MIDDLEWARE = [
@@ -55,7 +56,7 @@ ROOT_URLCONF = 'project.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['templates'],
+        'DIRS': [],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -106,7 +107,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'pt-br'
 
-TIME_ZONE = 'America/Sao_Paulo'
+TIME_ZONE = 'UTC'
 
 USE_I18N = True
 
@@ -116,19 +117,12 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
-STATIC_URL = 'projeto/static/'
-STATIC_ROOT = BASE_DIR / 'static_files' 
+STATIC_URL = 'static/'
 
 MEDIA_URL = 'media/'
 MADIA_ROOT = BASE_DIR / 'media'
-# Esta configuração server para armazenar as imagens enviadas pelo usuário, no banco de dados anão se salva imagens, apenas urls que apontam para as imagens que no caso estarão dentro dessa pasta.
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-try:
-    from project.local_settings import *
-except ImportError:
-    ...

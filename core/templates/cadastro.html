@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+{% load bootstrap4 %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    {% bootstrap_css %}
+</head>
+<body>
+    <div class="container">
+      <h1><a href="{% url "Index" %}">Cadastro</a></h1>
+      {% bootstrap_messages %}
+      <form action="{{form_action}}" method="post" class="form" autocomplete="off" enctype="multipart/form-data">
+          {% csrf_token %}
+          {% bootstrap_form form %}
+          <button type="submit" class="botao">Cadastrar</button>
+      </form>
+    </div>
+
+
+
+
+
+    <!--<div>
+        <form action="{% url "cadastro" %}" method="''post" enctype="multipart/form-data">
+        {% csrf_token %}
+        </form>
+
+        <div>
+            {% for field in form %}
+              <div id="painel_cadastro">
+                <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                {{ field }}
+              </div>
+            {% endfor %}
+            <p>
+              <input type="submit" value="Cadastrar">
+            </p>
+          </div>
+    </div>-->
+{% bootstrap_javascript jquery='full' %}
+</body>
+</html>
