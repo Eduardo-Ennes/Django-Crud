@@ -6,6 +6,8 @@ requirements.txt
 picture
 dicas
 manage.py
+db.sqlite3
+
 
 # C extensions
 *.so
