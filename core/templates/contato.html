@@ -4,46 +4,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static "estilo.css" %}">
+    <link rel="stylesheet" href="{% static "style.css" %}">
     <title>Contato Individual</title>
 </head>
 <body>
     <header>
         <h1>Informções pessoais</h1>
 
-        <p class="link"><a href="{% url "Index" %}">Voltar a página principal</a></p>
+        <p><a class="link_detail" href="{% url "Index" %}">Voltar a página principal</a></p>
     </header>
     {% block contact %}
-    <div>
+    <div class="div-contein-dados">
         <h1 class="titulo">{{contact.nome}} {{contact.sobrenome}}</h1>
-        <p class="dados"><strong>ID: </strong>{{contact.id}}</p>
-        <p class="dados"><strong>E-mail: </strong>{{contact.email}}</p>
-        <p class="dados"><strong>Phone: </strong>{{contact.telefone}}</p>
-        <p class="dados"><strong>Created date: </strong>{{contact.data_criacao}}</p>
-        <p class="dados"><strong>Category: </strong>{{contact.category}}</p>
-        <a class="dados" href="{% url "atualizar" contact.id %}">Update</a>
-        <!--
-            Não tem como mostrar pq as imagens estão muito grandes
-        {% if contact.imagem %}
-        <p>
-            <img src="{{contact.imagem.url}}" alt="{{contact.nome}} {{contact.sobrenome}}">
-        </p>
-        {% endif %}
-        -->
+        <div class="div-dados">
+            <p class="dados"><strong>ID: </strong>{{contact.id}}</p>
+            <p class="dados"><strong>E-mail: </strong>{{contact.email}}</p>
+            <p class="dados"><strong>Phone: </strong>{{contact.telefone}}</p>
+            <p class="dados"><strong>Created date: </strong>{{contact.data_criacao}}</p>
+            <p class="dados"><strong>Category: </strong>{{contact.category}}</p>
+        </div>
 
-        <!--
-        Esse código seria usado para quando o usuário acessasse cadastros que não são deles os botões de update e delete não apareceriam. 
-        {% if user == contato.owner %}{% endif %}
-        -->
-        <form action="{% url "deletar" contact.id %}" method="POST">
-            {% csrf_token %}
-            {% if confirmation == 'no' %}
-            <input type="hidden" name="confirmation" value="yes">
-            <button type="submit">Confirmar</button>
-            {% else %}
-            <button type="submit">Deletar</button>
-            {% endif %}
-        </form>
+        <div class="div-formulario">
+            <a class="btn-update" href="{% url "atualizar" contact.id %}">Update</a>
+            <form action="{% url "deletar" contact.id %}" method="POST">
+                {% csrf_token %}
+                {% if confirmation == 'no' %}
+                <input type="hidden" name="confirmation" value="yes">
+                <button class="btn-condel" type="submit">Confirmar</button>
+                {% else %}
+                <button class="btn-condel" type="submit">Deletar</button>
+                {% endif %}
+            </form>
+        </div>
     </div>
     {% endblock contact %}
 </body>

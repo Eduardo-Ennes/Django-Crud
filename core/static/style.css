@@ -1,101 +1,138 @@
-@charset "UTF-8";
-
-*{
-    padding: 0px;
-    margin: 0px;
+html{
+    font-size: 62.5%;
 }
 
 body{
-    position: relative;
-    background-color: rgb(181, 181, 182);
+    margin: 0;
+    padding: 0;
+    max-height: 100vh;
 }
 
 header{
-    background-color: rgb(126, 126, 250);
-    height: 200px;
-    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 18em;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.63);
 }
 
 h1{
-    text-align: center;
-    padding: 10px;
-    font-family: Arial, Helvetica, sans-serif;
+    font-size: 3.2em;
+    color: rgba(255, 255, 255, 0.774);
 }
 
-p.link{
-    position: absolute;
-    top: 100px;
-    left: 40%;
+.div-header{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5rem;
+    font-size: 2rem;
+    padding: 1rem;
+    justify-content: center;
 }
 
-p.register{
-    position: absolute;
-    left: 40%;
-}
-
-p.logouth{
-    position: absolute;
-    top: 140px;
-    left: 40%;
-}
-
-div.pesquisar{
-    position: relative;
-}
-
-form{
-    text-align: center;
-}
-
-a{
+.register, .link, .logouth{
     text-decoration: none;
-    padding: 10px;
-    font-size: larger;
-    font-family: Arial, Helvetica, sans-serif;
-    color: rgb(17, 1, 250);
+    color: rgba(255, 255, 255, 0.774);
+    padding: 1rem;
+}
+
+.register:hover, .link:hover, .logouth:hover{
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.795);
+}
+
+.pesquisar{
+    display: flex;
+    justify-content: center;
 }
 
 table{
-    position: relative;
-    margin: auto;
-    width: 800px;
     border-collapse: collapse;
-}
-
-input{
-    margin: auto;
-    width: 250px;
-    height: 20px;
+    background-color: rgba(0, 0, 0, 0.411);
+    width: 80%;
 }
 
 caption{
-    border: 1px solid black;
+    padding: 2rem;
+    font-size: 2.5em;
+    margin-top: 1em;
+    font-weight: 600;
 }
 
-th{
-    border: 1px solid black;
-}
-
-td{
-    border: 1px solid black;
+th, td{
+    border: 1px solid rgba(0, 0, 0, 0.418);
+    font-size: 2rem;
+    padding: .5rem;
     text-align: center;
 }
 
-.cadastro_usuario{
-    background-color: rgb(126, 126, 250);
+td:hover{
+    background-color: aliceblue;
 }
 
-.titulo_usuario{
-    text-align: center;
-    padding: 10px;
-    font-family: Arial, Helvetica, sans-serif;
+.id{
+    text-decoration: none;
+    color: black;
 }
 
-#painel_cadastro{
-    text-align: center;
+.id:hover{
+    text-decoration: underline;
 }
 
-.step-links{
-    position: absolute;
-    left: 45%;
+.link_detail{
+    font-size: 2em;
+    text-decoration: none;
+    color: aliceblue;
+    border-radius: 1rem;
+    padding: 1rem 2rem 1rem 2rem;
+}
+
+.link_detail:hover{
+    background-color: rgba(0, 0, 0, 0.795);
+}
+
+.div-contein-dados{
+    background-color: rgba(0, 0, 0, 0.63);
+    height: 35em;
+    width: 50em;
+    margin: auto;
+    display: flex;
+    margin-top: 2rem;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 1rem;
+}
+
+.titulo{
+    color: rgba(255, 255, 255, 0.774);
+}
+
+.div-formulario{
+    margin-top: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8rem;
+}
+
+.dados{
+    font-size: 1.7rem;
+    color: rgb(0, 0, 0);
+}
+
+.btn-update{
+    font-size: 2rem;
+    text-decoration: none;
+    padding: 0 .6rem;
+    color: black;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 1px;
+}
+
+.btn-condel{
+    font-size: 1.8rem;
+    background-color: white;
+    border: 1px solid black;
+    cursor: pointer;
 }

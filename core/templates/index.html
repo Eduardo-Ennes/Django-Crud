@@ -10,14 +10,16 @@
 <body>
     <header>
         <h1>Dados das pessoas cadastradas</h1>
-        {% if user.is_authenticated %}
-            <p class="link"><a href="{% url "cadastro" %}">Criar contatos</a></p>
-            <p class="register"><a href="{% url "user_update" %}">Atualizar dados</a></p>
-            <p class="logouth"><a href="{% url "logouth" %}">Logouth</a></p>
-        {% else %}
-            <p class="link"><a href="{% url "register" %}">Registrar-se</a></p>
-            <p class="register"><a href="{% url "login" %}">Login</a></p>
-        {% endif %}
+        <div class="div-header">
+            {% if user.is_authenticated %}
+                <p><a class="link" href="{% url "cadastro" %}">Criar contatos</a></p>
+                <p><a class="register" href="{% url "user_update" %}">Atualizar dados</a></p>
+                <p><a class="logouth" href="{% url "logouth" %}">Logouth</a></p>
+            {% else %}
+                <p><a class="link" href="{% url "register" %}">Registrar-se</a></p>
+                <p><a class="register" href="{% url "login" %}">Login</a></p>
+            {% endif %}
+        </div>
     </header>
 
     <!-- <div class="search"><br>
@@ -33,7 +35,7 @@
     </div> 
 -->
     {% if page_obj %}
-    <div class="pesquisar"> <br><br>
+    <div class="pesquisar">
         <table>
             <caption>Usuários</caption>
             <thead>
@@ -48,7 +50,7 @@
             <tbody>
                 {% for contact in contatos %}
                 <tr>
-                    <td><a href="{% url "contact" contact.id %}">{{contact.id}}</a></td>
+                    <td><a class="id" href="{% url "contact" contact.id %}">{{contact.id}}</a></td>
                     <td>{{contact.nome}}</td>
                     <td>{{contact.sobrenome}}</td>
                     <td>{{contact.telefone}}</td>
